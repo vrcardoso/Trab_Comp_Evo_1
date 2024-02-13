@@ -166,7 +166,6 @@ def eight_queens():
     boards=[]
     n_boards= 11
     colisions=[]
-    colisions_final=[]
     n_parents = 5
     max_gen= 200
     for i in range(n_boards):
@@ -193,12 +192,14 @@ def eight_queens():
         print("New ",i+1)
         print_board(boards[i])
         print()
-        colisions_final.append(veryfi(boards[i], n_queens))
 
     print("Colisions: ", colisions)
     print()
 
-    gen_childs(boards, colisions,n_parents,n_queens)
+    index_winner = chose_parents(colisions,n_parents)
 
+    print("Best :", index_winner[0]+1)
+    print_board(boards[index_winner[0]])
+    print()
 
 eight_queens()
