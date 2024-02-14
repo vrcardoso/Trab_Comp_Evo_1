@@ -121,7 +121,7 @@ def gen_childs(boards, colisions,n_parents,n_queens):
 def mutation_childs(boards, colisions,n_parents,n_queens):
     parents = chose_parents(colisions,n_parents)
     n_matrix= n_queens * n_queens
-    mutate_chance=5
+    mutate_chance=50
 
     for i in range(len(boards)):
         if i in parents:
@@ -142,7 +142,7 @@ def mutation_childs(boards, colisions,n_parents,n_queens):
             positions = queens_pos(child, n_queens)
 
         if len(positions) == n_queens:
-            if  random.randrange(n_matrix) < mutate_chance:
+            if  random.randrange(100) < mutate_chance:
                 continue
 
             chosen= random.randrange(len(positions))
