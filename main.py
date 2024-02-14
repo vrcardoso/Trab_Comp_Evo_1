@@ -162,9 +162,10 @@ def mutation_childs(boards, colisions,n_parents,n_queens):
     
 
 def eight_queens():
-    n_queens= 11
+    n_queens= 8
     boards=[]
     n_boards= 11
+    colisions_initial=[]
     colisions=[]
     n_parents = 5
     max_gen= 200
@@ -175,6 +176,7 @@ def eight_queens():
         print()
         colisions.append(veryfi(boards[i], n_queens))
 
+    colisions_initial =colisions.copy()
     print(colisions)
     print()
     for gen in range(max_gen):
@@ -193,7 +195,8 @@ def eight_queens():
         print_board(boards[i])
         print()
 
-    print("Colisions: ", colisions)
+    print("Initial Colisions: ", colisions_initial)
+    print("Final Colisions: ", colisions)
     print()
 
     index_winner = chose_parents(colisions,n_parents)
