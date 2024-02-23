@@ -135,7 +135,7 @@ def gen_childs(boards, colisions,n_parents,n_queens):
 
         boards[i] = child #substitui tabuleiro que esta na posicao i da lista de tabuleiros, pelo novo filho gerado
 
-        return parents
+    return parents
 
 
 
